@@ -104,7 +104,66 @@ button:active {
     transform: translateY(0);
 }
 
-/* Botão de Game Over ou Reiniciar */
 button.danger {
     background: linear-gradient(to bottom, #757575, #333333);
+}
+
+/* Estilização da lista de créditos e referências adicionada */
+.credits-list {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fff0f5;
+    border: 2px dashed #ff007f;
+    border-radius: 8px;
+    width: 100%;
+    text-align: left;
+}
+
+.equipe-container .role {
+    font-weight: bold;
+    color: #ff007f;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.equipe-container .nome {
+    font-size: 1rem;
+    color: #4a0e4e;
+    margin: 3px 0;
+    text-align: center;
+}
+
+.lista-links {
+    list-style-type: "🌸 ";
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.lista-links li {
+    font-size: 0.9rem;
+    color: #4a0e4e;
+    margin: 6px 0;
+}
+
+.lista-links a {
+    color: #ff007f;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.lista-links a:hover {
+    color: #b5006b;
+    text-decoration: none;
+}
+
+.equipe-container .referencia {
+    font-size: 0.85rem;
+    color: #1b5e20;
+    font-style: italic;
+    margin-top: 15px;
+    border-top: 1px dashed #ffc0cb;
+    padding-top: 8px;
+    text-align: center;
 }

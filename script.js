@@ -28,12 +28,17 @@ const storyData = {
     final_solar: {
         text: "✨ FINAL SOLAR: Um Arraso! Seu Valdir cedeu ao charme e aos números! O bairro instalou os painéis fotovoltaicos. Agora a comunidade produz sua própria energia limpa, a conta de luz caiu e o Discman da Tiffany nunca mais ficou sem bateria. É o pico do modernismo ecológico, miga!",
         status: "Diva da Sustentabilidade 👑",
-        choices: [{ text: "👑 Jogar Novamente", target: "inicio" }]
+        choices: [{ text: "👑 Ver Créditos e Referências", target: "creditos" }]
     },
     final_eolica: {
         text: "✨ FINAL EÓLICO: Tudo de Bom! As turbinas foram instaladas no topo do morro! O vento garantiu energia limpa e renovável para toda a comunidade sem poluir nada. Para comemorar, Tiffany organizou uma festa iluminada 100% por energia eólica. Foi um bafão histórico de tanto sucesso!",
         status: "Rainha dos Ventos 🌪️",
-        choices: [{ text: "🛍️ Jogar Novamente", target: "inicio" }]
+        choices: [{ text: "🛍️ Ver Créditos e Referências", target: "creditos" }]
+    },
+    creditos: {
+        text: "Você concluiu o projeto com sucesso e salvou a Alameda dos Ipês com muito estilo! Vamos dar uma olhada em quem fez esse bafão acontecer?",
+        status: "Miss Ecologia 2004 🌍",
+        choices: [{ text: "✨ Jogar Novamente", target: "inicio" }]
     },
     game_over_diesel: {
         text: "❌ GAME OVER: Você comprou um gerador a diesel super poluente! O rádio voltou, mas o bairro ficou coberto de fumaça preta derivada de combustíveis fósseis. Todo mundo cancelou a Tiffany do topo do fã-clube. Zero sustentável! Que uó!",
@@ -55,50 +60,67 @@ const storyData = {
 // Função principal para renderizar o estado atual do jogo
 function updateGame(stateKey) {
     const state = storyData[stateKey];
-    
-    // Atualiza textos na tela
-    document.getElementById("story-text").innerText = state.text;
-    document.getElementById("status").innerText = state.status;
-    
+
+    if (!state) {
+        console.error(`Estado não encontrado: ${stateKey}`);
+        return;
+    }
+
+    // Atualiza textos básicos na tela de forma segura
+    const storyTextEl = document.getElementById("story-text");
+    const statusEl = document.getElementById("status");
     const choicesContainer = document.getElementById("choices-container");
-    choicesContainer.innerHTML = ""; // Limpa escolhas anteriores
-    
-    // Cria novos botões de escolha
-    state.choices.forEach(choice => {
-        const button = document.createElement("button");
-        button.innerText = choice.text;
-        
-        // Estiliza o botão de forma diferente se for um recomeço ou game over
-        if (stateKey.startsWith("game_over")) {
-            button.classList.add("danger");
+    const creditsList = document.getElementById("credits-list");
+
+    if (storyTextEl) storyTextEl.innerText = state.text;
+    if (statusEl) statusEl.innerText = state.status;
+    if (choicesContainer) choicesContainer.innerHTML = ""; // Limpa escolhas anteriores
+
+    // Lógica para mostrar/esconder as referências e créditos
+    if (creditsList) {
+        if (stateKey === "creditos") {
+            creditsList.innerHTML = `
+                <div class="equipe-container">
+                    <p class="role">🎀 <strong>Desenvolvedores:</strong> 🎀</p>
+                    <p class="nome">turma 3I</p>
+                    <p class="nome">Amanda F n03</p>
+                    <p class="nome">Amanda C n04</p>
+                    
+                    <p class="role" style="margin-top: 15px;">🌐 <strong>Fontes & Inspirações:</strong> 🌐</p>
+                    <ul class="lista-links">
+                        <li><a href="https://alura.com.br" target="_blank" rel="noopener noreferrer">Plataforma Alura</a> - Base de tecnologia e códigos.</li>
+                        <li><a href="https://uol.com.br" target="_blank" rel="noopener noreferrer">Brasil Escola (UOL)</a> - Dados conceituais sobre matrizes energéticas.</li>
+                        <li><a href="https://wwf.org.br" target="_blank" rel="noopener noreferrer">WWF Brasil</a> - Conscientização sobre impacto e preservação ambiental.</li>
+                    </ul>
+
+                    <p class="referencia">🤖 <strong>Co-autor digital:</strong> Desenvolvido em parceria com Assistente de IA Inteligente.</p>
+                </div>
+            `;
+            creditsList.style.display = "block";
+        } else {
+            creditsList.style.display = "none";
         }
-        
-        // Adiciona o evento de clique para avançar na história
-        button.addEventListener("click", () => updateGame(choice.target));
-        choicesContainer.appendChild(button);
-    });
+    }
+
+    // Cria novos botões de escolha dinamicamente
+    if (choicesContainer) {
+        state.choices.forEach(choice => {
+            const button = document.createElement("button");
+            button.innerText = choice.text;
+
+            // Estiliza o botão de forma diferente se for um recomeço ou game over
+            if (stateKey.startsWith("game_over")) {
+                button.classList.add("danger");
+            }
+
+            // Adiciona o evento de clique para avançar na história
+            button.addEventListener("click", () => updateGame(choice.target));
+            choicesContainer.appendChild(button);
+        });
+    }
 }
 
-// Inicia o jogo assim que a página carregar
+// Inicia o jogo assim que a página carregar por completo
 window.onload = () => {
     updateGame("inicio");
 };
-    final_solar: {
-        text: "✨ FINAL SOLAR: Um Arraso! Seu Valdir cedeu ao charme e aos números! O bairro instalou os painéis fotovoltaicos. Agora a comunidade produz sua própria energia limpa, a conta de luz caiu e o Discman da Tiffany nunca mais ficou sem bateria. É o pico do modernismo ecológico, miga!",
-        status: "Diva da Sustentabilidade 👑",
-        // ALTERADO: Agora aponta para a página de créditos
-        choices: [{ text: "👑 Ver Créditos e Referências", target: "ir_para_creditos" }]
-    },
-    final_eolica: {
-        text: "✨ FINAL EÓLICO: Tudo de Bom! As turbinas foram instaladas no topo do morro! O vento garantiu energia limpa e renovável para toda a comunidade sem poluir nada. Para comemorar, Tiffany organizou uma festa iluminada 100% por energia eólica. Foi um bafão histórico de tanto sucesso!",
-        status: "Rainha dos Ventos 🌪️",
-        // ALTERADO: Agora aponta para a página de créditos
-        choices: [{ text: "🛍️ Ver Créditos e Referências", target: "ir_para_creditos" }]
-    },
-    // ADICIONE ESSE NOVO BLOCO LOGO ABAIXO DELAS:
-    ir_para_creditos: {
-        text: "Você concluiu o projeto com sucesso e salvou a Alameda dos Ipês com muito estilo! Vamos dar uma olhada em quem fez esse bafão acontecer?",
-        status: "Miss Ecologia 2004 🌍",
-        choices: [{ text: "✨ Abrir Página de Fim", target: "PROSSEGUIR_LINK" }]
-    },
- 

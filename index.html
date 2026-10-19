@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌟Renova Alameda: Eco-Edition🌟</title>
+    <!-- Importação correta das fontes do Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Poppins:wght@400;600&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte pixelada/retro para dar o clima dos anos 2000 -->
-    <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 
     <div class="game-container">
         <header>
             <h1>✨RenovaAlameda✨</h1>
-            <p class="subtitle"></p>
+            <p class="subtitle">Mundo Limpo, Look Impecável</p>
         </header>
 
         <div class="character-box">
@@ -24,7 +26,11 @@
         </div>
 
         <main class="story-box">
-            <p id="story-text">Carregando a história...</p>
+            <div id="story-content" style="width: 100%;">
+                <p id="story-text">Carregando a história...</p>
+                <!-- Onde os créditos e links vão aparecer dinamicamente -->
+                <div id="credits-list" class="credits-list" style="display: none;"></div>
+            </div>
         </main>
 
         <div id="choices-container" class="choices-box">

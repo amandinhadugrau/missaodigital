@@ -2,7 +2,7 @@
 const storyData = {
     inicio: {
         text: "Miga, socorro! É o ano 2004 e os apagões constantes na comunidade Alameda dos Ipês estão cortando a energia do seu rádio e do seu Discman! Tiffany decide: 'Isso é tão ano passado! Vamos atualizar o bairro com energias renováveis e sustentáveis!' Por onde começamos a mudar o mundo com muito estilo?",
-        status: "Determinada & Fashion",
+        status: "pronta para a missão",
         choices: [
             { text: "☀️ Focar em painéis de Energia Solar nas casas (Muito moderno!).", target: "rota_solar" },
             { text: "💨 Propor mini usinas de Energia Eólica no morro (Vento é o novo preto!).", target: "rota_eolica" },

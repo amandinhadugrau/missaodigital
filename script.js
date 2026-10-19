@@ -83,3 +83,22 @@ function updateGame(stateKey) {
 window.onload = () => {
     updateGame("inicio");
 };
+    final_solar: {
+        text: "✨ FINAL SOLAR: Um Arraso! Seu Valdir cedeu ao charme e aos números! O bairro instalou os painéis fotovoltaicos. Agora a comunidade produz sua própria energia limpa, a conta de luz caiu e o Discman da Tiffany nunca mais ficou sem bateria. É o pico do modernismo ecológico, miga!",
+        status: "Diva da Sustentabilidade 👑",
+        // ALTERADO: Agora aponta para a página de créditos
+        choices: [{ text: "👑 Ver Créditos e Referências", target: "ir_para_creditos" }]
+    },
+    final_eolica: {
+        text: "✨ FINAL EÓLICO: Tudo de Bom! As turbinas foram instaladas no topo do morro! O vento garantiu energia limpa e renovável para toda a comunidade sem poluir nada. Para comemorar, Tiffany organizou uma festa iluminada 100% por energia eólica. Foi um bafão histórico de tanto sucesso!",
+        status: "Rainha dos Ventos 🌪️",
+        // ALTERADO: Agora aponta para a página de créditos
+        choices: [{ text: "🛍️ Ver Créditos e Referências", target: "ir_para_creditos" }]
+    },
+    // ADICIONE ESSE NOVO BLOCO LOGO ABAIXO DELAS:
+    ir_para_creditos: {
+        text: "Você concluiu o projeto com sucesso e salvou a Alameda dos Ipês com muito estilo! Vamos dar uma olhada em quem fez esse bafão acontecer?",
+        status: "Miss Ecologia 2004 🌍",
+        choices: [{ text: "✨ Abrir Página de Fim", target: "PROSSEGUIR_LINK" }]
+    },
+ 

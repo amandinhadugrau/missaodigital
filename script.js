@@ -59,8 +59,8 @@ const storyData = {
         text: "Na hora da instalação no telhado, alguns moradores sem experiência querem subir de chinelo de dedo para ajudar e economizar. Como Tiffany lidera a segurança da obra?",
         status: "Líder Responsável ⛑️",
         choices: [
-            { text: "🦺 Contratar técnicos certificados com EPIs e deixar os moradores apoiando na logística em terra.", target: "solar_8" },
-            { text: "🩴 Deixar todo mundo subir no telhado molhado sem capacete nem cinto.", target: "game_over_acidente" }
+            { text: "🌟 Contratar técnicos certificados com EPIs e deixar os moradores apoiando na logística em terra.", target: "solar_8" },
+            { text: "📱 Deixar todo mundo subir no telhado molhado sem capacete nem cinto.", target: "game_over_acidente" }
         ]
     },
     solar_8: {
@@ -69,7 +69,7 @@ const storyData = {
         status: "Estrategista Comunitária 💡",
         choices: [
             { text: "🎤 Organizar um bazar beneficente retrô e um festival de talentos para arrecadar fundos.", target: "solar_9" },
-            { text: "🪓 Cortar e vender a madeira dos ipês centenários que dão nome ao bairro.", target: "game_over_desmate" }
+            { text: "🦋 Cortar e vender a madeira dos ipês centenários que dão nome ao bairro.", target: "game_over_desmate" }
         ]
     },
     solar_9: {
@@ -78,7 +78,7 @@ const storyData = {
         status: "Consultora Sustentável 💧",
         choices: [
             { text: "🌧️ Fazer limpeza periódica usando água da chuva reaproveitada e pano macio.", target: "solar_10" },
-            { text: "🧪 Lavar os painéis todos os dias com produtos químicos tóxicos e mangueira aberta.", target: "game_over_quimico" }
+            { text: "💿 Lavar os painéis todos os dias com produtos químicos tóxicos e mangueira aberta.", target: "game_over_quimico" }
         ]
     },
     solar_10: {
@@ -111,7 +111,7 @@ const storyData = {
     eolica_4: {
         step: "Etapa 4 de 10 • Rota Eólica 💨",
         text: "As medições mostraram ventos ótimos! Porém, uma bióloga alertou que a área fica próxima a uma rota de pássaros locais. Como tornar o projeto amigo da fauna?",
-        status: "Protetora da Fauna 🦜",
+        status: "Protetora da Fauna 💿",
         choices: [
             { text: "🦅 Posicionar as torres fora do corredor de voo e pintar uma pá de preto para aumentar a visibilidade.", target: "eolica_5" },
             { text: "📢 Instalar sirenes ensurdecedoras para espantar todos os animais da floresta.", target: "game_over_fauna" }
@@ -258,7 +258,7 @@ choices: [{ text: "🔄 Tentar Novamente", target: "inicio" }]
 game_over_fauna: {
 step: "❌ Game Over!",
 text: "❌ GAME OVER: Poluição sonora espantou todas as aves e desequilibrou o ecossistema local. Energia limpa precisa respeitar a biodiversidade!",
-status: "Sem Harmonia Ambiental 🦜",
+status: "Sem Harmonia Ambiental 💿",
 choices: [{ text: "🔄 Tentar Novamente", target: "inicio" }]
 },
 game_over_carvao: {

@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #d2cfe4 0%, #fecfef 99%, #fecfef 100%);
+    background: linear-gradient(135deg, #f1eefa 0%, #fecfef 99%, #fecfef 100%);
     font-family: 'Poppins', sans-serif;
     color: #4a0e4e;
     display: flex;
@@ -18,10 +18,10 @@ body {
 
 .game-container {
     background-color: rgba(255, 255, 255, 0.85);
-    border: 4px solid #fd8bf4;
+    border: 4px solid #ca7cfd;
     border-radius: 20px;
     box-shadow: 0px 10px 25px rgba(255, 102, 178, 0.4);
-    max-width: 600px;
+    max-width: 620px;
     width: 100%;
     padding: 30px;
     text-align: center;
@@ -53,11 +53,25 @@ header h1 {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
 }
 
 .avatar {
     font-size: 2rem;
+}
+
+/* Badge de progresso das 10 etapas */
+.step-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff66b2, #ca7cfd);
+    color: #ffffff;
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    padding: 4px 18px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 8px rgba(202, 124, 253, 0.4);
 }
 
 .story-box {
@@ -69,7 +83,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     margin-bottom: 25px;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
@@ -82,15 +96,15 @@ header h1 {
 }
 
 button {
-    background: linear-gradient(to bottom, #dfb2ec, #ec7db6);
-    color: white;
+    background: linear-gradient(to bottom, #dfb2ec, #ebc9c9);
+    color: rgb(72, 69, 73);
     border: none;
     border-radius: 25px;
     padding: 14px 20px;
-    font-size: 1rem;
+    font-size: 0.98rem;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, color 0.2s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -98,6 +112,7 @@ button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(255, 0, 127, 0.3);
     background: linear-gradient(to bottom, #ff85c2, #ff1a8c);
+    color: #ffffff;
 }
 
 button:active {
@@ -106,9 +121,10 @@ button:active {
 
 button.danger {
     background: linear-gradient(to bottom, #757575, #333333);
+    color: #ffffff;
 }
 
-/* Estilização da lista de créditos e referências adicionada */
+/* Estilização da lista de créditos e referências */
 .credits-list {
     margin-top: 15px;
     padding: 15px;

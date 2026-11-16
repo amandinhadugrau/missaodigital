@@ -286,18 +286,32 @@ if (choicesContainer) choicesContainer.innerHTML = "";
 if (creditsList) {
 if (stateKey === "creditos") {
 creditsList.innerHTML = `
+<div class="equipe-container">
+  <span class="credits-section-title">🎀 Equipe de Desenvolvimento</span>
+  <p class="turma-badge">✨ Turma 3I ✨</p>
 
-🎀 Desenvolvedores: 🎀
-turma 3I
-Amanda F n03
-Amanda C n04
-🌐 Fontes & Inspirações: 🌐
+  <div class="dev-cards">
+    <div class="dev-card">
+      <span class="dev-icon">👩‍💻</span>
+      <span class="dev-name">Amanda F</span>
+      <span class="dev-num">Nº 03</span>
+    </div>
+    <div class="dev-card">
+      <span class="dev-icon">💅</span>
+      <span class="dev-name">Amanda C</span>
+      <span class="dev-num">Nº 04</span>
+    </div>
+  </div>
 
-Plataforma Alura - Base de tecnologia e códigos.
-Brasil Escola (UOL) - Dados conceituais sobre matrizes energéticas.
-WWF Brasil - Conscientização sobre impacto e preservação ambiental.
-🤖 Co-autor digital: Desenvolvido em parceria com Assistente de IA Inteligente.
+  <span class="credits-section-title">🌐 Fontes &amp; Inspirações</span>
+  <div class="sources-grid">
+    <div class="source-item">🌸 <a href="https://alura.com.br" target="_blank" rel="noopener noreferrer">Plataforma Alura</a> — Base de tecnologia e estruturação de códigos.</div>
+    <div class="source-item">🌸 <a href="https://brasilescola.uol.com.br" target="_blank" rel="noopener noreferrer">Brasil Escola (UOL)</a> — Dados conceituais sobre matrizes energéticas.</div>
+    <div class="source-item">🌸 <a href="https://www.wwf.org.br" target="_blank" rel="noopener noreferrer">WWF Brasil</a> — Conscientização sobre impacto e preservação ambiental.</div>
+  </div>
 
+  <div class="ai-badge">🤖 Co-autor digital: Desenvolvido em parceria com Assistente de IA Inteligente.</div>
+</div>
 `;
 creditsList.style.display = "block";
 } else {

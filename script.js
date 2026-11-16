@@ -23,7 +23,7 @@ const storyData = {
         text: "Arrasou nos gráficos! Seu Valdir topou! Agora precisamos fazer o estudo técnico dos telhados da Alameda dos Ipês. Como estamos no Brasil (Hemisfério Sul), para qual direção os painéis solares devem ficar inclinados para captar o máximo de luz o ano inteiro?",
         status: "Engenheira Fashion 📐",
         choices: [
-            { text: "🧭 Virados para o Norte geográfico, longe da sombra das árvores.", target: "solar_4" },
+            { text: "💿 Virados para o Norte geográfico, longe da sombra das árvores.", target: "solar_4" },
             { text: "🌳 Virados para o Sul, bem debaixo das copas das árvores grandes para não esquentar.", target: "game_over_sombra" }
         ]
     },
@@ -159,7 +159,7 @@ text: "Uma frente fria com ventos muito fortes se aproxima da Alameda dos Ipês!
 status: "Especialista em Segurança 🛡️",
 choices: [
 { text: "🛑 Acionar o sistema automático de freio e ajuste de ângulo das pás (pitch control).", target: "eolica_10" },
-{ text: "🪢 Amarrar cordas de varal nas hélices para tentar segurar na mão.", target: "game_over_acidente" }
+{ text: "🎀 Amarrar cordas de varal nas hélices para tentar segurar na mão.", target: "game_over_acidente" }
 ]
 },
 eolica_10: {

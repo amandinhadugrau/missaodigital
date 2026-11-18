@@ -233,7 +233,7 @@ const storyData = {
     },
     game_over_curto: {
         step: "❌ Game Over!",
-        text: "❌ GAME OVER: Sem o Inversor Solar ou com instalações elétricas improvisadas, todos os aparelhos eletrônicos da casa queimaram! O rádio da Tiffany deu adeus!",
+        text: "❌ GAME OVER: Sem o Inversor Solar para converter Corrente Contínua em Corrente Alternada, todos os aparelhos eletrônicos da casa queimaram! O rádio da Tiffany deu adeus!",
         status: "Deu Curto no Look ⚡",
         choices: [{ text: "🔄 Tentar Novamente", target: "inicio" }]
     },
@@ -257,7 +257,7 @@ const storyData = {
     },
     game_over_quimico: {
         step: "❌ Game Over!",
-        text: "❌ GAME OVER: Os produtos químicos contaminaram a água, o solo e o ar do bairro, além de estragarem os equipamentos ecológicos!",
+        text: "❌ GAME OVER: Os produtos químicos escorreram pelas calhas e contaminaram a água do bairro, além de estragarem a película protetora dos painéis solares!",
         status: "Manutenção Desastrosa 🧪",
         choices: [{ text: "🔄 Tentar Novamente", target: "inicio" }]
     },
@@ -281,7 +281,7 @@ const storyData = {
     },
     game_over_carvao: {
         step: "❌ Game Over!",
-        text: "❌ GAME OVER: Queimar carvão mineral libera muito CO2 na atmosfera e causa aquecimento global! Energia limpa não combina com fumaça de carvão.",
+        text: "❌ GAME OVER: Queimar carvão mineral libera muito CO2 na atmosfera e causa aquecimento global! Energia eólica funciona apenas com a força limpa do vento.",
         status: "Reprovada em Ciências 🌫️",
         choices: [{ text: "🔄 Tentar Novamente", target: "inicio" }]
     }
@@ -307,12 +307,10 @@ function updateGame(stateKey) {
     const stepBadgeEl = document.getElementById("step-badge");
     const choicesContainer = document.getElementById("choices-container");
     const creditsList = document.getElementById("credits-list");
-
     if (storyTextEl) storyTextEl.innerText = state.text;
     if (statusEl) statusEl.innerText = state.status;
     if (stepBadgeEl && state.step) stepBadgeEl.innerText = state.step;
     if (choicesContainer) choicesContainer.innerHTML = "";
-
     if (creditsList) {
         if (stateKey === "creditos") {
             creditsList.innerHTML = `
@@ -348,10 +346,8 @@ function updateGame(stateKey) {
             creditsList.style.display = "none";
         }
     }
-
     if (choicesContainer) {
         const opcoesParaExibir = state.choices.length > 1 ? shuffleChoices(state.choices) : state.choices;
-
         opcoesParaExibir.forEach(choice => {
             const button = document.createElement("button");
             button.innerText = choice.text;
@@ -363,7 +359,6 @@ function updateGame(stateKey) {
         });
     }
 }
-
 window.onload = () => {
     updateGame("inicio");
 };
